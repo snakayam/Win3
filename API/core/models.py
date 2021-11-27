@@ -91,5 +91,14 @@ class Message(models.Model):
 class Favo(models.Model):
     pass
 
+
 class Posts(models.Model):
-    pass
+    title = models.CharField(max_length=30)
+    img = models.ImageField()
+    poster = User.name
+    contents = models.TextField()
+    date = models.DateTimeField(auto_now_add = True)
+    post_id = models.ForeignKey(
+        
+    )
+    
