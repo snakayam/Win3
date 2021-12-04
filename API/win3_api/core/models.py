@@ -95,10 +95,9 @@ class Favo(models.Model):
 class Posts(models.Model):
     title = models.CharField(max_length=30)
     img = models.ImageField()
-    poster = User.name
+    poster = models.ForeignKey(User,)
     contents = models.TextField()
     date = models.DateTimeField(auto_now_add = True)
-    post_id = models.ForeignKey(
-        
-    )
+    
+
     
