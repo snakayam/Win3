@@ -88,8 +88,18 @@ class Message(models.Model):
     def __str__(self):
         return self.sender
     
+
 class Favo(models.Model):
-    pass
+	date = models.DateTimeField(auto_now_add = True)
+	favoFrom = models.ForeignKey(
+	    settings.AUTH_USER_MODEL, related_name = 'favoFrom',
+	    on_delete=models.CASCADE
+	)
+	favoTo =  models.ForeignKey(
+	    Posts, related_name = 'favoFrom',
+	    on_delete=models.CASCADE
+	)
+    
 
 
 class Posts(models.Model):
