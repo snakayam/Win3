@@ -90,19 +90,19 @@ class Message(models.Model):
     
 
 class Favo(models.Model):
-	date = models.DateTimeField(auto_now_add = True)
-	favoFrom = models.ForeignKey(
+    date = models.DateTimeField(auto_now_add = True)
+    favoFrom = models.ForeignKey(
 	    settings.AUTH_USER_MODEL, related_name = 'favoFrom',
 	    on_delete=models.CASCADE
 	)
-	favoTo =  models.ForeignKey(
+    favoTo =  models.ForeignKey(
 	    Posts, related_name = 'favoFrom',
 	    on_delete=models.CASCADE
 	)
     
 
 
-class Posts(models.Model):
+class Contents(models.Model):
     title = models.CharField(max_length=30)
     img = models.ImageField()
     poster = models.ForeignKey(User,)
