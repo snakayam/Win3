@@ -1,23 +1,25 @@
 import rest_framework
+from rest_framework import serializers
 from rest_framework.decorators import authentication_classes, permission_classes
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import authentication, permissions
-from rest_framework import generics
+from rest_framework import viewsets
+from .models import  Contents
+from .selializer import ContentsSerializer
 
-class Contents(APIView):
-    authentication_classes = (authentication.TokenAuthentication,)
-    permission_classes = (permissions.IsAdminUser)
+class ContentsViewSet(viewsets.ModelViewSet):
+    queryset = Contents.objects.all()
+    serializer_class = ContentsSerializer
 
-    def get(self,request, format = None):
+    def thum_list(self,request):
         pass
-    def post(self,request,format = None):
+
+    def create_contents(self,request):
         pass
 
+    def detail(self,request):
+        pass
 
-class UserList(generics.ListCreateAPIView):
-    queryset = objects.all()
-    serializer_class = ''
-
-class MyPagenations(pageination.PageNumberPagination):
-    page_size = 30
+# class MyPagenations(pageination.PageNumberPagination):
+#     page_size = 30
