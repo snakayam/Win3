@@ -8,12 +8,13 @@ from rest_framework import viewsets
 from .models import  Contents
 from .selializer import ContentsSerializer
 
+
 class ContentsViewSet(viewsets.ModelViewSet):
     queryset = Contents.objects.all()
     serializer_class = ContentsSerializer
 
     def thum_list(self,request):
-        pass
+        
 
     def create_contents(self,request):
         pass

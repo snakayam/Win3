@@ -106,7 +106,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+REST_FRAMEWORK = {
+    'DEFAULT_PAGENATION_CLASS':'rest_framework.paginations.PageNumberPagination',
+    'PAGE_SIZE':20
+}
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
