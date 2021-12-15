@@ -5,7 +5,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import authentication, permissions
 from rest_framework import viewsets
-from .models import  Contents
+from core.models import  Contents
 from .selializer import ContentsSerializer
 
 
@@ -14,7 +14,7 @@ class ContentsViewSet(viewsets.ModelViewSet):
     serializer_class = ContentsSerializer
 
     def thum_list(self,request):
-        
+        pass
 
     def create_contents(self,request):
         pass

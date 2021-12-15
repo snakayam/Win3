@@ -1,9 +1,12 @@
-from rest_framework import permissions
+from rest_framework.permissions import BasePermission
+from rest_framework.permissions import SAFE_METHODS
 
-class ProfielePermission(permissions.BasePremission):
+
+
+class ProfilePermission(BasePermission):
 
     def has_object_premission(self,request,view,obj):
-        if request.method in permissions.SAFE_METHODS:
+        if request.method in SAFE_METHODS:
             return True
         
         return obj.userPro.id == request.user.id

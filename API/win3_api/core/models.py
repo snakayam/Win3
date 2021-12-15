@@ -88,6 +88,15 @@ class Message(models.Model):
     def __str__(self):
         return self.sender
     
+class Contents(models.Model):
+    title = models.CharField(max_length=20)
+    thum_img = models.ImageField()
+    contents = models.TextField()
+    made_by = models.ForeignKey(settings.AUTH_USER_MODEL,related_name='made_by', on_delete = models.CASCADE)
+    date = models.DateTimeField(auto_now_add=True)
+    last_change = models.DateTimeField(auto_now=True)
+    num_favo = models.IntegerField()
+    #published = models.BooleanField()
 
 class Favo(models.Model):
     date = models.DateTimeField(auto_now_add = True)
@@ -96,18 +105,6 @@ class Favo(models.Model):
 	    on_delete=models.CASCADE
 	)
     favoTo =  models.ForeignKey(
-	    Posts, related_name = 'favoFrom',
+	    Contents, related_name = 'favoFrom',
 	    on_delete=models.CASCADE
 	)
-    
-
-
-class Contents(models.Model):
-    title = models.CharField(max_length=30)
-    img = models.ImageField()
-    poster = models.ForeignKey(User,)
-    contents = models.TextField()
-    date = models.DateTimeField(auto_now_add = True)
-    
-
-    

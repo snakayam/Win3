@@ -41,9 +41,10 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'core.apps.CoreConfig',
-    'user_api.apps.ApiUserConfig',
-    'dm_api.apps.ApiDmConfig',
+    'user_api.apps.UserApiConfig',
+    'dm_api.apps.DmApiConfig',
     'corsheaders',
+    'post_api'
 ]
 
 MIDDLEWARE = [
@@ -106,10 +107,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-REST_FRAMEWORK = {
-    'DEFAULT_PAGENATION_CLASS':'rest_framework.paginations.PageNumberPagination',
-    'PAGE_SIZE':20
-}
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -137,3 +134,4 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+AUTH_USER_MODEL = 'core.User'
