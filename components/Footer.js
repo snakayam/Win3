@@ -1,42 +1,37 @@
-import React from 'react'
-import styles from "../styles/Home.module.css"
+import React from "react";
+import TwitterIcon from "@material-ui/icons/Twitter";
+import FacebookIcon from "@material-ui/icons/Facebook";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import YouTubeIcon from "@material-ui/icons/YouTube";
 
-export default function Footer() {
-  return (
-    <footer className="border-top text-center small text-muted py-3">
-    
-      <p>
-        <a to="/" className="mx-1">
-          Home
-        </a>{" "}
-        |
-        <a className="mx-1" to="/about-us">
-          About Us
-        </a>{" "}
-        |
-        <a className="mx-1" to="/terms">
-          Terms
-        </a>
-      </p>
-      <p className="m-0">
-        Copyright &copy; 2020{" "}
-        <a to="/" className="text-muted">
-          ComplexApp
-        </a>
-        . All rights reserved.
-      </p>
-    </footer>
-     /* <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer> */
-  )
-}
+export default function Footer(){
+    return (
+      <div className="footer">
+        <div className="footer-nakami">
+          　　<h1>Win-3</h1>
+          <div className="icons3">
+            <TwitterIcon />
+            <FacebookIcon />
+            <InstagramIcon />
+            <YouTubeIcon />
+          </div>
+          <br></br>
+       
+          <p>個人情報の取り扱い　　サイトマップ</p>
+          <p
+            style={{
+              textAlign: "right",
+              marginRight: "50px",
+              marginTop: "-40px"
+            }}
+          >
+            Copyright ©Hattori SG. 2021/12/10
+          </p>
+          <br></br>
+        </div>
+      </div>
+    );
+  }
+
+
+

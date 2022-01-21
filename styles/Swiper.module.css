@@ -1,0 +1,8 @@
+.slidingImages {
+  height: 500px;
+  width: 750px;
+}
+.slick-prev:before,
+.slick-next:before {
+  color: yellow;
+}

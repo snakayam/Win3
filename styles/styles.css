@@ -1,30 +1,3 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  line-height: 1.6;
-  font-size: 18px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-/* a:hover {
-  text-decoration: underline;
-} */
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
 .header {
   background-color: orange;
   margin: -22px;
@@ -34,7 +7,7 @@ img {
 .searchBox {
   margin-top: 5px;
   margin-bottom: 5px;
-}
+} 
 
 .icons {
   text-align: right;
@@ -123,10 +96,6 @@ img {
   margin: -22px;
   padding: 0;
   margin-top: 0px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 
 .footer-nakami {
