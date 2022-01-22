@@ -10,20 +10,8 @@ export default function ProfilePage() {
     <div>
       <Header />
       <ProfileInfo />
-
       <DisplayPosts />
-
-      {/* {
-          <p>
-            <Main3 />
-          </p>
-        }
-        {
-          <p>
-            <Main4 />
-          </p>
-        } */}
-      {<Footer />}
+      <Footer />
     </div>
   )
 }

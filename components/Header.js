@@ -29,6 +29,7 @@ const theme = createTheme({
 
 export default function Header() {
   const [loggedIn, setLoggedIn] = useState()
+  // const [loggedIn, setLoggedIn] = useState(Boolean(localStorage.getItem("Win3Token")))
   return (
     <div className="header">
       <ThemeProvider theme={theme}>
@@ -58,8 +59,7 @@ export default function Header() {
           </Paper>
           
         </Container>
-        {loggedIn ? <HeaderLoggedIn /> : <HeaderLoggedOut setLoggedIn={setLoggedIn} />}
-        {/* <HeaderLoggedIn /> */}
+        {loggedIn ? <HeaderLoggedIn setLoggedIn={setLoggedIn} /> : <HeaderLoggedOut setLoggedIn={setLoggedIn} />}
         </Toolbar>
       </ThemeProvider>
       

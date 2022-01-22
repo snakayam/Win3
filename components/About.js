@@ -1,5 +1,4 @@
 import React from 'react'
-// hello
 export default function About() {
   return(
     <div className="container container--narrow py-md-5">
