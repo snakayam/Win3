@@ -15,6 +15,7 @@ import SearchIcon from "@material-ui/icons/Search"
 import HeaderLoggedIn from "./HeaderLoggedIn"
 import HeaderLoggedOut from "./HeaderLoggedOut"
 import { Link as MuiLink } from "@material-ui/core"
+import Link from "next/link"
 
 const theme = createTheme({
   palette: {
@@ -27,15 +28,15 @@ const theme = createTheme({
   }
 })
 
-export default function Header() {
-  const [loggedIn, setLoggedIn] = useState()
+export default function Header(props) {
+  // const [loggedIn, setLoggedIn] = useState()
   // const [loggedIn, setLoggedIn] = useState(Boolean(localStorage.getItem("Win3Token")))
   return (
     <div className="header">
       <ThemeProvider theme={theme}>
         <AppBar position="static" color="primary">
           <Toolbar>
-            <a href="/"><h1><MuiLink style={{ color: "white", textDecoration: "none" }}>Win-3</MuiLink></h1></a>
+            <Link href="/"><a><MuiLink variant={"h3"}style={{ color: "white", textDecoration: "none", fontSize: 35 }}>Win-3</MuiLink></a></Link>
           </Toolbar>
         </AppBar>
         <Toolbar>
@@ -59,7 +60,7 @@ export default function Header() {
           </Paper>
           
         </Container>
-        {loggedIn ? <HeaderLoggedIn setLoggedIn={setLoggedIn} /> : <HeaderLoggedOut setLoggedIn={setLoggedIn} />}
+        {props.loggedIn ? <HeaderLoggedIn setLoggedIn={props.setLoggedIn} /> : <HeaderLoggedOut setLoggedIn={props.setLoggedIn} />}
         </Toolbar>
       </ThemeProvider>
       

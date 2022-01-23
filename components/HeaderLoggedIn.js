@@ -6,11 +6,12 @@ import BuildCircleIcon from "@mui/icons-material/BuildCircle"
 import HomeIcon from "@mui/icons-material/Home"
 import BorderColorIcon from "@mui/icons-material/BorderColor"
 import EmailIcon from "@mui/icons-material/Email"
-import Avatar from '@mui/material/Avatar';
+import Avatar from "@mui/material/Avatar"
 import { Grid } from "@material-ui/core"
-export default function HeaderLoggedIn(props) {
 
-  function handleLogout(){
+
+export default function HeaderLoggedIn(props) {
+  function handleLogout() {
     props.setLoggedIn(false)
     localStorage.removeItem("Win3Token")
     localStorage.removeItem("Win3Username")
@@ -47,7 +48,7 @@ export default function HeaderLoggedIn(props) {
       <Grid item xs={0.5}>
         <a href="/">
           {/* <AccountCircleIcon className={style.icons} /> */}
-          <Avatar alt="username" src={localStorage.getItem("Win3Avatar")} sx={{width:25, height:27}} />
+          <Avatar alt="username" src={localStorage.getItem("Win3Avatar")} sx={{ width: 25, height: 27 }} />
         </a>
       </Grid>
 

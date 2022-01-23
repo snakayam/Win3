@@ -3,8 +3,7 @@ import { useState } from "react"
 import Button from "@mui/material/Button"
 import CssBaseline from "@mui/material/CssBaseline"
 import TextField from "@mui/material/TextField"
-// import FormControlLabel from '@mui/material/FormControlLabel';
-// import Checkbox from '@mui/material/Checkbox';
+
 import Link from "@mui/material/Link"
 import Grid from "@mui/material/Grid"
 import Box from "@mui/material/Box"
@@ -14,7 +13,6 @@ import { createTheme, ThemeProvider } from "@mui/material/styles"
 import Axios from "axios"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
-
 
 const theme = createTheme()
 
@@ -69,10 +67,10 @@ export default function SignUp() {
                 新規会員登録
               </Button>
               <p>
-              既にアカウントをお持ちの方は
-              <Link href="/SignIn" variant="body2">
-                {"ログイン"}
-              </Link>
+                既にアカウントをお持ちの方は
+                <Link href="/SignIn" variant="body2">
+                  {"ログイン"}
+                </Link>
               </p>
             </Box>
           </Box>

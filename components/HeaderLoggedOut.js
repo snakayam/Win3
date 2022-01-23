@@ -3,7 +3,7 @@ import NextLink from "next/link"
 import { Link as MuiLink } from "@material-ui/core"
 import style from "../styles/Header.module.css"
 import Axios from "axios"
-import { RemoveShoppingCartRounded } from "@material-ui/icons"
+
 
 export default function HeaderLoggedOut(props) {
   function handleLoggedIn(e) {
