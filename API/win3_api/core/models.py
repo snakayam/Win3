@@ -6,7 +6,7 @@ from django.conf import settings
 
 def upload_path(instance, filename):
     ext = filename.split('.')[-1]
-    return '/'.join(['image'],str(instance.userPro.id)+str(instance.nickName)+str('.')+str(ext))
+    return '/'.join(['image',str(instance.userPro.id)+str(instance.nickName)+str('.')+str(ext)])
 
 class UserManager(BaseUserManager):
     def create_user(self,email,password = None,**extra_fields):
@@ -42,7 +42,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 class Profile(models.Model):
     nickName = models.CharField(max_length=20)
 
-    user_Pro = models.OneToOneField(
+    userPro = models.OneToOneField(
         settings.AUTH_USER_MODEL,
         related_name='userPro',
         on_delete=models.CASCADE
