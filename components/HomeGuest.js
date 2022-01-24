@@ -5,13 +5,13 @@ import Swiper from "./Swiper"
 
 
 export default function HomeGuest(props) {
-  function handleLoggedIn(e){
-    e.preventDefault()
-    props.setLoggedIn(true)
-  }
+  // function handleLoggedIn(e){
+  //   e.preventDefault()
+  //   props.setLoggedIn(true)
+  // }
   return (
     <>
-      <h1 onClick={handleLoggedIn}>WIN-3へようこそ</h1>
+      <h1>WIN-3へようこそ</h1>
       <Swiper />
     </>
   )

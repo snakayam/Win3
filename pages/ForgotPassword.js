@@ -24,7 +24,7 @@ export default function ForgotPassword() {
 
   return (
     <>
-      <Header />
+   
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -47,7 +47,7 @@ export default function ForgotPassword() {
         </Box>
       </Container>
 
-      <Footer />
+ 
     </>
   )
 }

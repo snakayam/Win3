@@ -9,9 +9,9 @@ export default function MainPost() {
   return (
     <div className="main3">
       <div className="prof-left">
-        <div class="box box6">picture</div>
+        <div className="box box6">picture</div>
       </div>
-      <ul className="task">
+      <ul className="task prof-right">
         <div style={{ fontSize: "40px" }}>Summer sea</div>
         <div className="icons4">
           <FavoriteBorderIcon />
