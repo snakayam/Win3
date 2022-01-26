@@ -2,7 +2,7 @@ import React from "react"
 import { Container } from "@mui/material"
 import { Box } from "@mui/material"
 import style from "../styles/Layout.module.css"
-import Button from "@mui/material/button"
+import Button from "@mui/material/Button"
 import Axios from 'axios'
 import { useState, useEffect } from "react"
 

@@ -1,6 +1,7 @@
 import React from "react"
 import { useState } from "react"
 import { ThemeProvider, createTheme } from "@material-ui/core/styles"
+import { useSelector } from "react-redux"
 import Button from "@material-ui/core/Button"
 import orange from "@material-ui/core/colors/orange"
 import teal from "@material-ui/core/colors/teal"
@@ -31,6 +32,7 @@ const theme = createTheme({
 export default function Header(props) {
   // const [loggedIn, setLoggedIn] = useState()
   // const [loggedIn, setLoggedIn] = useState(Boolean(localStorage.getItem("Win3Token")))
+  const isLoggedIn = useSelector((state) => state.authorization.isLoggedIn)
   return (
     <div className="header">
       <ThemeProvider theme={theme}>
@@ -60,7 +62,8 @@ export default function Header(props) {
           </Paper>
           
         </Container>
-        {props.loggedIn ? <HeaderLoggedIn setLoggedIn={props.setLoggedIn} /> : <HeaderLoggedOut setLoggedIn={props.setLoggedIn} />}
+        {isLoggedIn ? <HeaderLoggedIn /> : <HeaderLoggedOut /> }
+        
         </Toolbar>
       </ThemeProvider>
       

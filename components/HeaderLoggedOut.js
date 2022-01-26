@@ -1,13 +1,26 @@
 import Button from "@mui/material/Button"
-import NextLink from "next/link"
+import  Link  from "next/link"
 import { Link as MuiLink } from "@material-ui/core"
 import style from "../styles/Header.module.css"
 import Axios from "axios"
 
 
-export default function HeaderLoggedOut(props) {
-  function handleLoggedIn(e) {
-    e.preventDefault()
+export default function HeaderLoggedOut() {
+  return (
+    <>
+      <Button variant="outlined" color="inherit">
+        <Link href="/SignIn">
+          <MuiLink style={{ color: "white", textDecoration: "none" }}>ログイン</MuiLink>
+        </Link>
+      </Button>
+
+    
+    </>
+  )
+}
+
+  // function handleLoggedIn(e) {
+  //   e.preventDefault()
     // try {
     //   const response = await Axios.post("")
     //   if(responce.data){
@@ -21,15 +34,5 @@ export default function HeaderLoggedOut(props) {
     // } catch(e){
 
     // }
-    props.setLoggedIn(true)
-  }
-  return (
-    <div className={style.icons}>
-      <Button variant="outlined" color="inherit" onClick={handleLoggedIn}>
-        <NextLink href="/SignIn">
-          <MuiLink style={{ color: "white", textDecoration: "none" }}>ログイン</MuiLink>
-        </NextLink>
-      </Button>
-    </div>
-  )
-}
+    // props.setLoggedIn(true)
+  // }
