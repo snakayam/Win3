@@ -26,5 +26,7 @@ urlpatterns = [
     path('api/dm/', include('dm_api.urls')),
     path('api/post/', include('post_api.urls')),
     path('api/favo',include('favo_api.urls')),
+    path('rest-auth/',include('rest_auth.urls')),
+    path('rest_auth/registration/',include('rest_auth.registration.urls'))
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

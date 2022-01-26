@@ -7,13 +7,6 @@ from rest_framework import authentication, permissions
 from rest_framework import viewsets
 from core.models import  Contents
 from .selializer import ContentsSerializer
-<<<<<<< HEAD
-
-class ContentsViewSet(APIView):
-    serializer_class = ContentsSerializer
-    queryset = Contents.objects.all()
-    
-=======
 from core.custompermissions import ProfilePermission
 
 class ContentsViewSet(viewsets.ModelViewSet):
@@ -46,4 +39,3 @@ class ContentsViewSet(viewsets.ModelViewSet):
 
 # class MyPagenations(pageination.PageNumberPagination):
 #     page_size = 30
->>>>>>> e82787dd492cf56d8e4f4ed71585c0b6ef18965a

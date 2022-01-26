@@ -38,15 +38,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'rest_framework',
     'rest_framework.authtoken',
     'core.apps.CoreConfig',
     'user_api.apps.UserApiConfig',
     'dm_api.apps.DmApiConfig',
     'corsheaders',
-    'post_api'
+    'post_api',
+    'rest_auth',
+    'rest_auth.registration',
+    'allauth',
+    'allauth.account',
 ]
-
+SITE_ID = 1
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -129,7 +134,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-AUTH_USER_NIDEL =  'core.User'
+
 
 STATIC_URL = '/static/'
 
