@@ -93,9 +93,9 @@ class Contents(models.Model):
     thum_img = models.ImageField()
     contents = models.TextField()
     made_by = models.ForeignKey(settings.AUTH_USER_MODEL,related_name='made_by', on_delete = models.CASCADE)
-    date = models.DateTimeField(auto_now_add=True)
+    created_on = models.DateTimeField(auto_now_add=True)
     last_change = models.DateTimeField(auto_now=True)
-    num_favo = models.IntegerField()
+    num_favo = models.IntegerField(default = 0)
     #published = models.BooleanField()
 
 class Favo(models.Model):
