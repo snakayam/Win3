@@ -8,19 +8,7 @@ from rest_framework import viewsets
 from core.models import  Contents
 from .selializer import ContentsSerializer
 
-
-class ContentsViewSet(viewsets.ModelViewSet):
-    queryset = Contents.objects.all()
+class ContentsViewSet(APIView):
     serializer_class = ContentsSerializer
-
-    def thum_list(self,request):
-        pass
-
-    def create_contents(self,request):
-        pass
-
-    def detail(self,request):
-        pass
-
-# class MyPagenations(pageination.PageNumberPagination):
-#     page_size = 30
+    queryset = Contents.objects.all()
+    
