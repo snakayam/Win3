@@ -1,6 +1,7 @@
 import React from "react"
 import { useState } from "react"
 import { ThemeProvider, createTheme } from "@material-ui/core/styles"
+import { useSelector } from "react-redux"
 import Button from "@material-ui/core/Button"
 import orange from "@material-ui/core/colors/orange"
 import teal from "@material-ui/core/colors/teal"
@@ -15,6 +16,7 @@ import SearchIcon from "@material-ui/icons/Search"
 import HeaderLoggedIn from "./HeaderLoggedIn"
 import HeaderLoggedOut from "./HeaderLoggedOut"
 import { Link as MuiLink } from "@material-ui/core"
+import Link from "next/link"
 
 const theme = createTheme({
   palette: {
@@ -27,14 +29,16 @@ const theme = createTheme({
   }
 })
 
-export default function Header() {
-  const [loggedIn, setLoggedIn] = useState()
+export default function Header(props) {
+  // const [loggedIn, setLoggedIn] = useState()
+  // const [loggedIn, setLoggedIn] = useState(Boolean(localStorage.getItem("Win3Token")))
+  const isLoggedIn = useSelector((state) => state.authorization.isLoggedIn)
   return (
     <div className="header">
       <ThemeProvider theme={theme}>
         <AppBar position="static" color="primary">
           <Toolbar>
-            <a href="/"><h1><MuiLink style={{ color: "white", textDecoration: "none" }}>Win-3</MuiLink></h1></a>
+            <Link href="/"><a><MuiLink variant={"h3"}style={{ color: "white", textDecoration: "none", fontSize: 35 }}>Win-3</MuiLink></a></Link>
           </Toolbar>
         </AppBar>
         <Toolbar>
@@ -58,8 +62,8 @@ export default function Header() {
           </Paper>
           
         </Container>
-        {loggedIn ? <HeaderLoggedIn /> : <HeaderLoggedOut setLoggedIn={setLoggedIn} />}
-        {/* <HeaderLoggedIn /> */}
+        {isLoggedIn ? <HeaderLoggedIn /> : <HeaderLoggedOut /> }
+        
         </Toolbar>
       </ThemeProvider>
       

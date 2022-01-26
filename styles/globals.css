@@ -36,6 +36,7 @@ img {
   margin-bottom: 5px;
 }
 
+
 .icons {
   text-align: right;
   margin-right: 30px;
@@ -119,15 +120,15 @@ img {
 }
 
 .footer {
-  background-color: gray;
-  margin: -22px;
+  /* background-color: gray; */
+ margin: -22px;
   padding: 0;
   margin-top: 0px;
-  position: absolute;
+ 
   left: 0;
   bottom: 0;
   right: 0;
-}
+} 
 
 .footer-nakami {
   margin-top: 10px;
@@ -164,4 +165,4 @@ img {
   margin-right: 170px;
   float: left;
   font-size: 20px;
-}
+} 

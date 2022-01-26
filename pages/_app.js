@@ -1,11 +1,24 @@
-import '../styles/globals.css'
+import React, { useState, useEffect } from "react"
+import "../styles/globals.css"
+import Layout from "../components/Layout"
+import { useSelector, useDispatch } from "react-redux"
+import Axios from "axios"
+import createStore from "../store"
+import { useStore } from "../store"
+import { Provider } from 'react-redux'
 
-// export default function MyApp({ Component, pageProps }) {
-//   return <Component {...pageProps} />
-// }
+Axios.defaults.baseURL = "http://localhost:8000"
+
 const App = ({ Component, pageProps }) => {
-  return <div>{typeof window === 'undefined' ? null : <Component {...pageProps} />}</div>
+  // const store = createStore()
+  const store = useStore(pageProps.initialReduxState)
+  return (
+    <Provider store={store}>
+      <Layout>
+        {typeof window === "undefined" ? null : <Component {...pageProps} />}
+      </Layout>
+    </Provider>
+  )
 }
 
 export default App
-

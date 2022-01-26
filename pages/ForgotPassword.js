@@ -9,22 +9,27 @@ import CssBaseline from "@mui/material/CssBaseline"
 import Typography from "@mui/material/Typography"
 import Button from "@mui/material/Button"
 import Axios from "axios"
+import { useSelector, useDispatch } from "react-redux"
+import { SelectAllRounded } from "@material-ui/icons"
+
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState()
   async function handleSubmit(event) {
-    event.preventDefault()
-    try {
-      Axios.post("http://localhost:8080/register", { email })
-      console.log("User was succesfully created.")
-    } catch (e) {
-      console.log("There was an error.")
-    }
+    // event.preventDefault()
+    // try {
+    //   Axios.post("http://localhost:8080/register", { email })
+    //   console.log("User was succesfully created.")
+    // } catch (e) {
+    //   console.log("There was an error.")
+    // }
   }
+  const selector = useSelector((state) => state)
+  console.log(selector)
 
   return (
     <>
-      <Header />
+   
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -47,7 +52,7 @@ export default function ForgotPassword() {
         </Box>
       </Container>
 
-      <Footer />
+ 
     </>
   )
 }
