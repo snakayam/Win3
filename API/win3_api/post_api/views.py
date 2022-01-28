@@ -11,8 +11,9 @@ from .selializer import ContentsSerializer
 class ContentsViewSet(viewsets.ModelViewSet):
     serializer_class = ContentsSerializer
     queryset = Contents.objects.all()
-    authentication_classes = (authentication.TokenAuthentication,)
-    permission_classes = (permissions.IsAuthenticated)
+    authentication_classes = [authentication.TokenAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+
 
     def perform_create(self, serializer):
         serializer.save(made_by=self.request.user)

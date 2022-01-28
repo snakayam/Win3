@@ -5,7 +5,7 @@ from . import views
 app_name = 'post'
 
 router = DefaultRouter()
-router.register('post', views.ContentsViewSet, basename='post')
+router.register('contents',views.ContentsViewSet)
 
 urlpatterns = [
     path('',include(router.urls))
