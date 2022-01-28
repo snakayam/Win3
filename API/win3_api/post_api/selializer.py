@@ -6,5 +6,5 @@ class ContentsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Contents
-        fields = ('title','thum_img','contents','made_by', 'created_on')
+        fields = ('title','thum_img','contents','made_by','created_on')
         extra_kwargs = {'made_by': {'read_only': True}}
