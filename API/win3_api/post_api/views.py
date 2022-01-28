@@ -15,4 +15,4 @@ class ContentsViewSet(viewsets.ModelViewSet):
     permission_classes = (permissions.IsAuthenticated)
 
     def perform_create(self, serializer):
-        serializer.save(userPro=self.request.user)
+        serializer.save(made_by=self.request.user)
