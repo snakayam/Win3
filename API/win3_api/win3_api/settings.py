@@ -46,10 +46,9 @@ INSTALLED_APPS = [
     'dm_api.apps.DmApiConfig',
     'corsheaders',
     'post_api',
-    'rest_auth',
-    'rest_auth.registration',
-    'allauth',
-    'allauth.account',
+
+
+
 ]
 SITE_ID = 1
 MIDDLEWARE = [
@@ -145,3 +144,4 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'core.User'
+
