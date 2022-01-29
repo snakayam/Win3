@@ -6,6 +6,8 @@ app_name = 'post'
 
 router = DefaultRouter()
 router.register('contents',views.ContentsViewSet)
+router.register('contents_list',views.ContentsListViewSet)
+
 
 urlpatterns = [
     path('',include(router.urls))
