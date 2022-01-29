@@ -4,6 +4,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser,BaseUserManager,PermissionsMixin
 from django.conf import settings
 
+
 def upload_path(instance, filename):
     ext = filename.split('.')[-1]
     return '/'.join(['image',str(instance.userPro.id)+str(instance.nickName)+str('.')+str(ext)])

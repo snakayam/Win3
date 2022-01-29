@@ -2,7 +2,7 @@
 
 from rest_framework import generics, authentication, permissions
 from . import serializers
-from core.models import Profile, FriendRequest
+from core.models import Profile, FriendRequest, User
 from django.db.models import Q
 from rest_framework import viewsets
 from rest_framework.exceptions import ValidationError
@@ -12,6 +12,8 @@ from core.custompermissions import ProfilePermission
 
 class CreateUserView(generics.CreateAPIView):
     serializer_class = serializers.UserSerializer
+
+
 
 class FriendRequestViewSet(viewsets.ModelViewSet):
     queryset = FriendRequest.objects.all()
