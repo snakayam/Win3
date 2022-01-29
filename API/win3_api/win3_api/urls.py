@@ -27,6 +27,5 @@ urlpatterns = [
     path('api/dm/', include('dm_api.urls')),
     path('api/post/', include('post_api.urls')),
     path('api/favo',include('favo_api.urls')),
-    path('login/',obtain_jwt_token),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
