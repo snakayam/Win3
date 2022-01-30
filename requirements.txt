@@ -1,0 +1,4 @@
+dj_database_url
+Django
+djangorestframework
+pillow
