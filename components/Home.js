@@ -1,38 +1,25 @@
 import React from "react"
-import styles from "../styles/Home.module.css"
+import News from "./News"
+import LatestPosts from "./LatestPosts"
+import Videos from "./Videos"
+import Codes from "./Codes"
+import Swiper from "./Swiper"
+
+//コメントアウト　　　　　　{/*  コメント　　　　　　*/}
+//プロフィール画面 ：Header+Main1+Main2+Footer
+//作品閲覧画面    ：Header+Main3+Main4+Footer
+//ホーム画面      ：Header+Swiper+Main5+Main6+Main7+Main8+Footer
+//作品投稿画面    :Header+Main9+Footer
+//プロフィール設定画面:Header+Main10+Footer
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">WIN3</a>
-        </h1>
-        <p className={styles.description}>
-          Get started by editing <code className={styles.code}>pages/index.js</code>
-        </p>{" "}
-        <div className={styles.grid}>
-          <a to="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a to="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a to="https://github.com/vercel/next.js/tree/master/examples" className={styles.card}>
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a to="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app" className={styles.card}>
-            <h2>Deploy &rarr;</h2>
-            <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
-          </a>
-        </div>
-      </main>
+    <div>
+      <Swiper />
+      <News />
+      <LatestPosts />
+      <Videos />
+      <Codes />
     </div>
   )
 }

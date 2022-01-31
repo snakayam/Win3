@@ -19,11 +19,11 @@ export default function SignIn() {
   const loading = useSelector((state) => state.authorization.loading)
 
   const [userData, setUserData] = useState({
-    email: "",
+    username: "",
     password: ""
   })
 
-  const { email, password } = userData
+  const { username, password } = userData
 
   function onChange(e) {
     setUserData({ ...userData, [e.target.name]: e.target.value })
@@ -32,12 +32,14 @@ export default function SignIn() {
   async function onSubmit(e) {
     e.preventDefault()
     if (dispatch && dispatch !== null && dispatch !== undefined) {
-      dispatch(login(email, password))
-      const loggedInData = true
-      localStorage.setItem("Logged in ?", loggedInData)
+      await dispatch(login(username, password))
+    
+
     }
   }
 
+  
+  
   // if (isLoggedIn = true) {
   //   router.push("/")
   // }
@@ -59,7 +61,7 @@ export default function SignIn() {
             Sign In
           </Typography>
           <Box component="form" onSubmit={onSubmit} sx={{ mt: 1 }}>
-            <TextField margin="normal" required fullWidth id="email" label="メールアドレス" name="email" autoComplete="email" onChange={onChange} value={email} />
+            <TextField margin="normal" required fullWidth id="username" label="メールアドレス" name="username" autoComplete="username" onChange={onChange} value={username} />
             <TextField margin="normal" required fullWidth name="password" label="パスワード" type="password" id="password" autoComplete="current-password" onChange={onChange} value={password} />
             {loading ? (
               <p>loading</p>

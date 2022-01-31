@@ -1,5 +1,5 @@
 import styles from "../styles/layout.module.css"
-import Header from "./Header"
+import Header from "./Header2"
 import Flash from "../components/Flash"
 import Footer from "./Footer"
 import Head from "next/head"
