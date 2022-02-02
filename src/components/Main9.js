@@ -1,6 +1,4 @@
 import React from "react"
-import { useState } from "react"
-import Axios from "axios"
 import Box from "@mui/material/Box"
 import TextField from "@mui/material/TextField"
 import Radio from "@mui/material/Radio"
@@ -9,53 +7,19 @@ import FormControlLabel from "@mui/material/FormControlLabel"
 import FormControl from "@mui/material/FormControl"
 import FormLabel from "@mui/material/FormLabel"
 import Button from "@mui/material/Button"
-import Input from "@mui/material/Input"
 
-export default function PostForm() {
-  const formData = new FormData()
-  const [postData, setPostData] = useState({
-    title: "",
-    contents: ""
-  })
-  const [thum_img, setThum_Img] = useState(null)
-  const { title, contents } = postData
-  const token = localStorage.getItem("response")
-
-  function onChange(e) {
-    setPostData({ ...postData, [e.target.name]: e.target.value })
-  }
-
-  async function onSubmit(e) {
-    e.preventDefault()
-    formData.append("title", title)
-    formData.append("contents", contents)
-    formData.append("thum_img", thum_img)
-    console.log(localStorage.getItem("response"))
-    await Axios.post("api/post/contents/", formData, {
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-        Authorization: "Token " + token
-        // Authorization : "Token 3bc199b5a1791d1044277d3d1dba6621a8d7caf9"
-      }
-    })
-  }
-
-  return (
-    <Box component="form" onSubmit={onSubmit} sx={{ mt: 1 }}>
+class Main9 extends React.Component {
+  render() {
+    return (
       <div className="main9">
         <div className="jouhou">情報入力</div>
-        {/* <div className="toukouBox">
-        <Box
-          sx={{
-            width: 500,
-            height: 320
-          }}
-        />
-      </div> */}
-        <div className="upload">
-          <label htmlFor="contained-button-file">
-            <Input accept="image/*" id="contained-button-file" multiple type="file" onChange={(e) => setThum_Img(e.target.files[0])} />
-          </label>
+        <div className="toukouBox">
+          <Box
+            sx={{
+              width: 500,
+              height: 320
+            }}
+          />
         </div>
         <p
           style={{
@@ -70,7 +34,7 @@ export default function PostForm() {
             maxWidth: "100%"
           }}
         >
-          <TextField fullWidth label="作品タイトルを入力" name="title" id="fullWidth" value={title} onChange={onChange} />
+          <TextField fullWidth label="作品タイトルを入力" id="fullWidth" />
         </Box>
         <p
           style={{
@@ -85,7 +49,7 @@ export default function PostForm() {
             maxWidth: "100%"
           }}
         >
-          <TextField fullWidth label="キャプションを入力" name="contents" id="fullWidth" value={contents} onChange={onChange} />
+          <TextField fullWidth label="キャプションを入力" id="fullWidth" />
         </Box>
         <p
           style={{
@@ -146,7 +110,7 @@ export default function PostForm() {
           </FormControl>
 
           <div className="toukouButton">
-            <Button variant="contained" type="submit" disableElevation>
+            <Button variant="contained" disableElevation>
               作品を投稿
             </Button>
           </div>
@@ -156,6 +120,8 @@ export default function PostForm() {
           <br></br>
         </div>
       </div>
-    </Box>
-  )
+    )
+  }
 }
+
+export default Main9

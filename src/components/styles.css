@@ -1,35 +1,7 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  line-height: 1.6;
-  font-size: 18px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-/* a:hover {
-  text-decoration: underline;
-} */
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
 .header {
   background-color: orange;
   margin: -22px;
   padding: 0;
-  
 }
 
 .searchBox {
@@ -39,11 +11,9 @@ img {
 }
 
 .title {
-  font-size: 100px;
+  font-size: 30px;
   margin-top: 10px;
   margin-left: 665px;
-  color: black;
-  z-index: 100;
 }
 
 .icons {
@@ -135,11 +105,10 @@ img {
 }
 
 .footer {
-  /* background-color: gray; */
+  background-color: gray;
   margin: -22px;
   padding: 0;
   margin-top: 0px;
-
 }
 
 .footer-nakami {
@@ -272,146 +241,3 @@ img {
 .main5 {
   margin-top: -385px;
 }
-
-/* 
-.header {
-  background-color: orange;
-  margin: -22px;
-  padding: 0;
-}
-
-.searchBox {
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-
-.icons {
-  text-align: right;
-  margin-right: 30px;
-  margin-top: -29px;
-  font-size: large;
-}
-
-.main1 {
-  margin: 0;
-  padding: 0;
-}
-
-.prof-left {
-  margin: 60px;
-  float: left;
-}
-
-.prof-right {
-  margin-top: 90px;
-  margin-right: 160px;
-  float: right;
-  font-size: 20px;
-}
-
-.main2 {
-  margin-top: 300px;
-}
-
-.sort {
-  text-align: right;
-  margin-right: 90px;
-}
-
-.toukou {
-  font-size: 30px;
-  text-align: left;
-  margin-left: 50px;
-}
-
-.achieve {
-  margin-left: -40px;
-}
-
-.juchuu {
-  font-size: 30px;
-  text-align: left;
-  margin-left: 50px;
-}
-
-.box0 {
-  background: white;
-  margin-left: 130px;
-}
-.box1 {
-  background: white;
-}
-.box2 {
-  background: white;
-}
-.box3 {
-  background: white;
-}
-.box4 {
-  background: white;
-}
-.box5 {
-  background: white;
-}
-.wrap {
-  margin-bottom: 20px;
-  height: 200px;
-  text-align: left;
-  margin-left: 90px;
-}
-.box {
-  display: inline-block;
-  text-align: center;
-  width: 200px;
-  height: 200px;
-  border: solid 1px;
-}
-
-.footer {
-  /* background-color: gray; */
- /* margin: -22px;
-  padding: 0;
-  margin-top: 0px;
- 
-  left: 0;
-  bottom: 0;
-  right: 0;
-} 
-
-.footer-nakami {
-  margin-top: 10px;
-  color: black;
-  margin-left: 60px;
-}
-
-.icons2 {
-  margin-right: -150px;
-  margin-top: 190px;
-  font-size: large;
-}
-
-.icons3 {
-  text-align: right;
-  margin-right: 40px;
-  margin-top: -60px;
-}
-
-.main3 {
-  margin: 0;
-  padding: 0;
-}
-
-.box6 {
-  background: white;
-  height: 594px;
-  width: 420px;
-  margin-left: 30px;
-}
-
-.task {
-  margin-top: 50px;
-  margin-right: 170px;
-  float: left;
-  font-size: 20px;
-}  */ 

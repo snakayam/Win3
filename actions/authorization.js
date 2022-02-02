@@ -7,20 +7,21 @@ export const register = (email, password) => async (dispatch) => {
   })
 
   try {
-    Axios.post(
+    const res = Axios.post(
       "/api/user/create/",
       { email, password },
-      {
-        headers: {
-          "content-type": "application/json"
-        }
-      }
+      // {
+      //   headers: {
+      //     "content-type": "application/json"
+      //   }
+      // }
     )
-
-    localStorage.setItem("Logged in ?", true)
+  
     dispatch({
       type: SIGNING_IN_SUCCESS
     })
+    localStorage.setItem("response", res.data.token)
+    localStorage.setItem("Logged in ?", true)
   } catch (err) {
     dispatch({
       type: SIGNING_IN_FAIL
@@ -32,20 +33,31 @@ export const register = (email, password) => async (dispatch) => {
   })
 }
 
-export const login = (email, password) => async (dispatch) => {
+export const login = (username, password) => async (dispatch) => {
   dispatch({
     type: SET_AUTHORIZATION_LOADING
   })
   try {
-    Axios.post(
-      "/api/user/create/",
-      { email, password },
+    // Axios.post(
+    //   "/api/user/create/",
+    //   { email, password },
+    //   {
+    //     headers: {
+    //       "content-type": "application/json"
+    //     }
+    //   }
+    // )
+    const response = await Axios.post(
+      "/authen/",
+      { username, password },
       {
         headers: {
-          "content-type": "application/json"
+          "Content-Type": "application/json"
         }
       }
-    )
+      )
+      localStorage.setItem("response", response.data.token)
+      console.log(response)
     localStorage.setItem("Logged in ?", true)
     dispatch({
       type: LOGIN_SUCCESS
@@ -96,6 +108,8 @@ export const logout = () => async (dispatch) => {
       type: LOGOUT_SUCCESS
     })
     localStorage.setItem("Logged in ?", false)
+    localStorage.setItem("response", null)
+   
   } catch (err) {
     dispatch({
       type: LOGOUT_FAIL
