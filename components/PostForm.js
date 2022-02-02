@@ -1,42 +1,3 @@
-// import React from "react"
-// import { Container } from "@mui/material"
-// import { Box } from "@mui/material"
-// import style from "../styles/Layout.module.css"
-// import Button from "@mui/material/Button"
-// import Axios from 'axios'
-// import { useState, useEffect } from "react"
-
-// export default function PostForm() {
-// const [title, setTitle] = useState()
-// const [body, setBody ] = useState()
-// const [file, setFile] = useState()
-
-//   async function handleSubmit(e) {
-//     e.preventDefault()
-//     try{
-//      const responce = await Axios.post('/post', {title, body,file,token:localStorage.getItem("Win3token")})
-// navigate(`/SpecficPost/${responce.data}`)
-//     }catch(e){
-// console.log("There was a proble.")
-//     }
-//   }
-
-//   return (
-//     <Container maxWidth="sm" className={style.container}>
-//       <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }} className={style.box}>
-//         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-//           <input autoFocus type="text"onChange={e=>setTitle(e.target.value)} />
-//           <input type="text" onChange={e=>setBody(e.target.value)} />
-//           <input type="file" onChange={e=>setFile(e.target.value)}/>
-//           <Button type="submit" variant="contained" sx={[{ mt: 3, mb: 2, bgcolor: "orange" }, { "&:hover": { bgcolor: "orange" } }]}>
-//             投稿
-//           </Button>
-//         </Box>
-//       </Box>
-//     </Container>
-//   )
-// }
-
 import React from "react"
 import { useState } from "react"
 import Axios from "axios"
@@ -58,43 +19,25 @@ export default function PostForm() {
   })
   const [thum_img, setThum_Img] = useState(null)
   const { title, contents } = postData
-  // const thum_img = thum_img
-  // const createObjectURL = (window.URL || window.webkitURL).createObjectURL || window.createObjectURL;
+  const token = localStorage.getItem("response")
 
   function onChange(e) {
-    // e.preventDefault()
     setPostData({ ...postData, [e.target.name]: e.target.value })
   }
 
-  // function onChangeFile(e){
-  //   const files = e.target.files
-  //   image_url = createObjectURL(files[0])
-  //   setThum_Img({thum_img:image_url})
-
-  // }
-
   async function onSubmit(e) {
     e.preventDefault()
-    formData.append('title', title)
-    formData.append('contents', contents)
-    formData.append('thum_img', thum_img)
-    const res = await Axios.post(
-      "api/post/contents/",
-      // { postData },
-      // { title, thum_img, contents },
-      formData,
-      // {
-      //   headers: {
-      //     "Content-Type": "application/json"
-      //   }
-      // }
-      {
+    formData.append("title", title)
+    formData.append("contents", contents)
+    formData.append("thum_img", thum_img)
+    console.log(localStorage.getItem("response"))
+    await Axios.post("api/post/contents/", formData, {
       headers: {
-        'Content-Type': 'multipart/form-data'
-      }}
-    )
-    console.log(res.data)
-    // console.log({ title, thum_img, contents })
+        "Content-Type": "application/x-www-form-urlencoded",
+        Authorization: "Token " + token
+        // Authorization : "Token 3bc199b5a1791d1044277d3d1dba6621a8d7caf9"
+      }
+    })
   }
 
   return (
@@ -112,10 +55,6 @@ export default function PostForm() {
         <div className="upload">
           <label htmlFor="contained-button-file">
             <Input accept="image/*" id="contained-button-file" multiple type="file" onChange={(e) => setThum_Img(e.target.files[0])} />
-            {/* <Input accept="image/*" id="contained-button-file" name="thum_img" multiple type="file"  onChange={(e) => setImage(e.target.files[0])} /> */}
-            {/* <Button variant="contained" component="span">
-              Upload
-            </Button> */}
           </label>
         </div>
         <p
@@ -131,7 +70,6 @@ export default function PostForm() {
             maxWidth: "100%"
           }}
         >
-          {/* <TextField fullWidth label="作品タイトルを入力" id="fullWidth" /> */}
           <TextField fullWidth label="作品タイトルを入力" name="title" id="fullWidth" value={title} onChange={onChange} />
         </Box>
         <p

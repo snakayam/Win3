@@ -16,12 +16,12 @@ export const register = (email, password) => async (dispatch) => {
       //   }
       // }
     )
-    console.log(res)
-    // console.log(Axios.get("api/user/create"))
-    localStorage.setItem("Logged in ?", true)
+  
     dispatch({
       type: SIGNING_IN_SUCCESS
     })
+    localStorage.setItem("response", res.data.token)
+    localStorage.setItem("Logged in ?", true)
   } catch (err) {
     dispatch({
       type: SIGNING_IN_FAIL
@@ -57,6 +57,7 @@ export const login = (username, password) => async (dispatch) => {
       }
       )
       localStorage.setItem("response", response.data.token)
+      console.log(response)
     localStorage.setItem("Logged in ?", true)
     dispatch({
       type: LOGIN_SUCCESS
@@ -107,6 +108,8 @@ export const logout = () => async (dispatch) => {
       type: LOGOUT_SUCCESS
     })
     localStorage.setItem("Logged in ?", false)
+    localStorage.setItem("response", null)
+   
   } catch (err) {
     dispatch({
       type: LOGOUT_FAIL

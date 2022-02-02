@@ -1,6 +1,6 @@
 import React from "react"
 import { useState } from "react"
-import Axios from 'axios'
+import Axios from "axios"
 import Box from "@mui/material/Box"
 import TextField from "@mui/material/TextField"
 import { styled } from "@mui/material/styles"
@@ -23,28 +23,32 @@ const Input = styled("input")({
 })
 
 export default function ProfileForm() {
+  const formData = new FormData()
   const [img, setImg] = useState(null)
   const [profile, setProfile] = useState({
     nickName: "",
-    userPro: "",
+    userPro: ""
   })
+  const token = localStorage.getItem("response")
 
-  const { nickName, userPro,} = profile
+
+  const { nickName, userPro } = profile
 
   function onChange(e) {
-    setProfile({...profile, [e.target.name] : e.target.value})
+    setProfile({ ...profile, [e.target.name]: e.target.value })
   }
 
-  function onSubmit() {
-    Axios.post(
-      "/api/user/myprofile/",
-      { nickName, userPro, img },
-      {
-        headers: {
-          "content-type": "application/json"
-        }
+  async function onSubmit(e) {
+    e.preventDefault()
+    formData.append("nickName", nickName)
+    formData.append("userPro", userPro)
+    formData.append("img", img)
+    await Axios.post("/api/user/profile/", formData, {
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        Authorization: "Token " + token
       }
-    )
+    })
   }
 
   return (
@@ -94,7 +98,7 @@ export default function ProfileForm() {
             marginLeft: "13px"
           }}
         >
-           プロフィールを入力
+          userPro
         </p>
         <Box
           sx={{
@@ -102,7 +106,7 @@ export default function ProfileForm() {
             maxWidth: "100%"
           }}
         >
-          <TextField fullWidth label="プロフィールを入力" id="fullWidth" name="userPro" onChange={onChange} value={userPro} />
+          <TextField fullWidth label="userPro" id="fullWidth" name="userPro" onChange={onChange} value={userPro} />
         </Box>
         <p
           style={{
